@@ -1,0 +1,52 @@
+{
+  "id": "05_rental_en",
+  "lang": "en",
+  "doc_type": "rental",
+  "clauses": [
+    {
+      "label": "1",
+      "risky": false,
+      "rules": []
+    },
+    {
+      "label": "2",
+      "risky": true,
+      "rules": [
+        "excessive_security_deposit"
+      ]
+    },
+    {
+      "label": "3",
+      "risky": true,
+      "rules": [
+        "unilateral_change"
+      ]
+    },
+    {
+      "label": "4",
+      "risky": true,
+      "rules": [
+        "eviction_without_notice"
+      ]
+    },
+    {
+      "label": "5",
+      "risky": false,
+      "rules": []
+    },
+    {
+      "label": "6",
+      "risky": false,
+      "rules": []
+    }
+  ],
+  "money": null,
+  "rental": {
+    "monthly_rent": 6000,
+    "security_deposit": 60000
+  },
+  "pii": [
+    "7376 7242 3888",
+    "8969653287"
+  ]
+}

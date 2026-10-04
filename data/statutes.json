@@ -1,0 +1,158 @@
+{
+  "_note": "Hand-curated. Gemma never writes citations; it can only pick rule IDs, and rules point here. Every entry must be checked against the official text by a named team member, who then fills in last_verified (YYYY-MM-DD) and verified_by. While last_verified is null the UI shows an 'unverified' badge. Bengali and Hindi text needs native-speaker review.",
+  "statutes": [
+    {
+      "id": "cpa2019_unfair_contract",
+      "name": "Consumer Protection Act, 2019, Section 2(46) ('unfair contract')",
+      "plain_summary": {
+        "en": "A contract term can be 'unfair' if it, for example, demands an excessive security deposit, sets a penalty far bigger than the real loss, refuses early repayment, lets one side end the contract without reasonable cause, or imposes an unreasonable charge.",
+        "bn": "চুক্তির কোনো শর্ত 'অন্যায্য' হতে পারে, যেমন: অতিরিক্ত জামানত চাওয়া, আসল ক্ষতির চেয়ে অনেক বড় জরিমানা, আগে শোধ করতে না দেওয়া, যুক্তিসঙ্গত কারণ ছাড়াই এক পক্ষের চুক্তি শেষ করার অধিকার, বা অযৌক্তিক চার্জ।",
+        "hi": "समझौते की कोई शर्त 'अनुचित' हो सकती है, जैसे: बहुत ज़्यादा जमानत मांगना, असली नुकसान से कहीं बड़ा जुर्माना, जल्दी चुकाने से मना करना, बिना उचित कारण एक पक्ष को समझौता खत्म करने का अधिकार, या अनुचित शुल्क।"
+      },
+      "source_url": "https://www.indiacode.nic.in/",
+      "source_hint": "India Code: The Consumer Protection Act, 2019 (Act 35 of 2019), Section 2(46)",
+      "last_verified": null,
+      "verified_by": null
+    },
+    {
+      "id": "cpa2019_redressal",
+      "name": "Consumer Protection Act, 2019, consumer commissions",
+      "plain_summary": {
+        "en": "Consumers can file complaints with the District Consumer Commission, including online through e-Daakhil. Courts have held that an arbitration clause in a contract does not by itself stop a consumer complaint.",
+        "bn": "ক্রেতারা জেলা ক্রেতা সুরক্ষা কমিশনে অভিযোগ করতে পারেন, অনলাইনে e-Daakhil-এর মাধ্যমেও। আদালত বলেছে, চুক্তিতে সালিশির শর্ত থাকলেই ক্রেতার অভিযোগ বন্ধ হয় না।",
+        "hi": "उपभोक्ता ज़िला उपभोक्ता आयोग में शिकायत कर सकते हैं, ऑनलाइन e-Daakhil से भी। अदालतों ने कहा है कि समझौते में मध्यस्थता की शर्त होने भर से उपभोक्ता की शिकायत नहीं रुकती।"
+      },
+      "source_url": "https://edaakhil.nic.in/",
+      "source_hint": "Consumer Protection Act, 2019, Chapter IV; check the arbitration point against the Supreme Court's Emaar MGF v. Aftab Singh decision",
+      "last_verified": null,
+      "verified_by": null
+    },
+    {
+      "id": "ica1872_s28",
+      "name": "Indian Contract Act, 1872, Section 28",
+      "plain_summary": {
+        "en": "An agreement that completely stops a person from enforcing their rights through courts is void. Agreeing to settle disputes by arbitration is an allowed exception.",
+        "bn": "যে চুক্তি কাউকে আদালতের মাধ্যমে নিজের অধিকার আদায় করতে পুরোপুরি আটকে দেয়, তা অকার্যকর। সালিশির মাধ্যমে বিরোধ মেটানোর শর্ত অনুমোদিত ব্যতিক্রম।",
+        "hi": "जो समझौता किसी को अदालत के ज़रिए अपने अधिकार पाने से पूरी तरह रोकता है, वह शून्य है। मध्यस्थता से विवाद सुलझाने की शर्त एक मान्य अपवाद है।"
+      },
+      "source_url": "https://www.indiacode.nic.in/",
+      "source_hint": "India Code: The Indian Contract Act, 1872, Section 28 and Exception 1",
+      "last_verified": null,
+      "verified_by": null
+    },
+    {
+      "id": "ica1872_s74",
+      "name": "Indian Contract Act, 1872, Section 74",
+      "plain_summary": {
+        "en": "When a contract names a penalty for breaking it, the other side can only recover reasonable compensation, up to that named amount, not automatically the full penalty.",
+        "bn": "চুক্তি ভাঙার জন্য জরিমানা লেখা থাকলেও অন্য পক্ষ কেবল যুক্তিসঙ্গত ক্ষতিপূরণ পেতে পারে, ওই অঙ্ক পর্যন্ত; পুরো জরিমানা আপনা থেকে নয়।",
+        "hi": "समझौता तोड़ने पर जुर्माना लिखा हो तब भी दूसरा पक्ष सिर्फ़ उचित मुआवज़ा पा सकता है, उस रकम तक; पूरा जुर्माना अपने-आप नहीं।"
+      },
+      "source_url": "https://www.indiacode.nic.in/",
+      "source_hint": "India Code: The Indian Contract Act, 1872, Section 74",
+      "last_verified": null,
+      "verified_by": null
+    },
+    {
+      "id": "rbi_penal_charges_2023",
+      "name": "RBI circular 'Fair Lending Practice - Penal Charges in Loan Accounts' (18 Aug 2023, effective 1 Jan 2024)",
+      "plain_summary": {
+        "en": "For banks, NBFCs and other RBI-regulated lenders: a penalty for late payment must be a reasonable 'penal charge', not extra interest added to the rate, and it must not be compounded. It must be disclosed in the loan terms.",
+        "bn": "ব্যাংক, NBFC ও অন্য RBI-নিয়ন্ত্রিত ঋণদাতাদের জন্য: দেরির শাস্তি হবে যুক্তিসঙ্গত 'পেনাল চার্জ', সুদের হারে যোগ করা বাড়তি সুদ নয়, আর তার উপর সুদ ধরা যাবে না। ঋণের শর্তে এটা জানাতে হবে।",
+        "hi": "बैंक, NBFC और अन्य RBI-नियंत्रित कर्ज़दाताओं के लिए: देरी की सज़ा एक उचित 'पीनल चार्ज' होनी चाहिए, ब्याज दर में जोड़ा गया अतिरिक्त ब्याज नहीं, और उस पर ब्याज नहीं लग सकता। इसे कर्ज़ की शर्तों में बताना ज़रूरी है।"
+      },
+      "source_url": "https://www.rbi.org.in/",
+      "source_hint": "rbi.org.in > Notifications, 18 August 2023, 'Fair Lending Practice - Penal Charges in Loan Accounts'",
+      "last_verified": null,
+      "verified_by": null
+    },
+    {
+      "id": "rbi_kfs_2024",
+      "name": "RBI circular 'Key Facts Statement (KFS) for Loans & Advances' (15 Apr 2024)",
+      "plain_summary": {
+        "en": "RBI-regulated lenders must give borrowers of retail and MSME loans a Key Facts Statement before signing, showing the APR (yearly cost including fees) and all charges. Charges not shown in it cannot be taken without the borrower's consent.",
+        "bn": "RBI-নিয়ন্ত্রিত ঋণদাতাদের খুচরো ও MSME ঋণে সই করার আগে 'কি ফ্যাক্টস স্টেটমেন্ট' দিতে হবে, যাতে APR (ফি সহ বছরের খরচ) ও সব চার্জ লেখা থাকবে। এতে লেখা নেই এমন চার্জ ঋণগ্রহীতার সম্মতি ছাড়া নেওয়া যাবে না।",
+        "hi": "RBI-नियंत्रित कर्ज़दाताओं को खुदरा और MSME कर्ज़ में दस्तख़त से पहले 'की फैक्ट्स स्टेटमेंट' देना होगा, जिसमें APR (फीस सहित साल का खर्च) और सारे शुल्क लिखे हों। जो शुल्क इसमें नहीं लिखा, वह कर्ज़दार की सहमति के बिना नहीं लिया जा सकता।"
+      },
+      "source_url": "https://www.rbi.org.in/",
+      "source_hint": "rbi.org.in > Notifications, 15 April 2024, 'Key Facts Statement (KFS) for Loans & Advances'",
+      "last_verified": null,
+      "verified_by": null
+    },
+    {
+      "id": "rbi_fair_practices_code",
+      "name": "RBI Fair Practices Code for lenders (in RBI Master Directions for banks and NBFCs)",
+      "plain_summary": {
+        "en": "Regulated lenders must explain loan terms in a language the borrower understands, give notice before changing interest or charges, state the notice period before repossessing security, and must not harass borrowers during recovery.",
+        "bn": "নিয়ন্ত্রিত ঋণদাতাদের ঋণের শর্ত ঋণগ্রহীতার বোঝার ভাষায় জানাতে হবে, সুদ বা চার্জ বদলানোর আগে নোটিশ দিতে হবে, জামানত দখলের আগে নোটিশের সময় জানাতে হবে, আর আদায়ের সময় হয়রানি করা যাবে না।",
+        "hi": "नियंत्रित कर्ज़दाताओं को कर्ज़ की शर्तें कर्ज़दार की समझ की भाषा में बतानी होंगी, ब्याज या शुल्क बदलने से पहले सूचना देनी होगी, ज़मानत कब्ज़े से पहले सूचना की अवधि बतानी होगी, और वसूली में परेशान नहीं करना होगा।"
+      },
+      "source_url": "https://www.rbi.org.in/",
+      "source_hint": "rbi.org.in > Master Directions: Fair Practices Code sections for commercial banks and for NBFCs",
+      "last_verified": null,
+      "verified_by": null
+    },
+    {
+      "id": "rbi_foreclosure",
+      "name": "RBI instructions on foreclosure / pre-payment charges",
+      "plain_summary": {
+        "en": "RBI does not allow banks and NBFCs to charge foreclosure or pre-payment penalties on floating-rate term loans taken by individuals for non-business purposes.",
+        "bn": "ব্যক্তিগত (ব্যবসা নয় এমন) কাজে নেওয়া ফ্লোটিং-রেট মেয়াদি ঋণে ব্যাংক ও NBFC-কে আগে শোধের জরিমানা নিতে RBI অনুমতি দেয় না।",
+        "hi": "व्यक्तिगत (गैर-व्यावसायिक) कामों के लिए लिए गए फ्लोटिंग-रेट टर्म लोन पर बैंक और NBFC को जल्दी चुकाने का जुर्माना लेने की RBI अनुमति नहीं देता।"
+      },
+      "source_url": "https://www.rbi.org.in/",
+      "source_hint": "rbi.org.in > search 'foreclosure charges' / 'Pre-payment Charges on Loans' directions; confirm current scope and effective date",
+      "last_verified": null,
+      "verified_by": null
+    },
+    {
+      "id": "model_tenancy_act_2021",
+      "name": "Model Tenancy Act, 2021 (applies only where a state has adopted it)",
+      "plain_summary": {
+        "en": "Suggests a security deposit of at most two months' rent for homes, a written tenancy agreement, eviction only through the Rent Authority or Court, and no cutting off of essential supplies. It is a model law: check whether your state has adopted it.",
+        "bn": "বাড়ির জন্য সর্বোচ্চ দুই মাসের ভাড়া জামানত, লিখিত ভাড়ার চুক্তি, কেবল রেন্ট অথরিটি বা আদালতের মাধ্যমে উচ্ছেদ, আর জরুরি পরিষেবা বন্ধ না করার কথা বলে। এটা আদর্শ আইন: আপনার রাজ্য গ্রহণ করেছে কিনা দেখে নিন।",
+        "hi": "घर के लिए अधिकतम दो महीने के किराए जितनी जमानत, लिखित किरायानामा, सिर्फ़ रेंट अथॉरिटी या अदालत से बेदखली, और ज़रूरी सेवाएं न काटने की बात करता है। यह आदर्श कानून है: देखें कि आपके राज्य ने इसे अपनाया है या नहीं।"
+      },
+      "source_url": "https://mohua.gov.in/",
+      "source_hint": "Ministry of Housing and Urban Affairs: Model Tenancy Act, 2021, Sections 11 and 20; check state adoption (West Bengal has its own Premises Tenancy Act, 1997)",
+      "last_verified": null,
+      "verified_by": null
+    },
+    {
+      "id": "bengal_moneylenders_1940",
+      "name": "Bengal Money-Lenders Act, 1940 (West Bengal)",
+      "plain_summary": {
+        "en": "Private moneylenders in West Bengal must hold a licence, and the law limits the interest they can charge. Ask the local registrar of moneylenders about current limits.",
+        "bn": "পশ্চিমবঙ্গে বেসরকারি মহাজনদের লাইসেন্স থাকতে হবে, আর আইন তাদের সুদের সীমা বেঁধে দেয়। বর্তমান সীমা জানতে স্থানীয় মহাজনী রেজিস্ট্রারের কাছে খোঁজ নিন।",
+        "hi": "पश्चिम बंगाल में निजी साहूकारों के पास लाइसेंस होना चाहिए, और कानून उनके ब्याज की सीमा तय करता है। मौजूदा सीमा के लिए स्थानीय साहूकार रजिस्ट्रार से पूछें।"
+      },
+      "source_url": "https://www.indiacode.nic.in/",
+      "source_hint": "India Code / WB state laws: The Bengal Money-Lenders Act, 1940; confirm licensing and interest-limit sections and current notified rates",
+      "last_verified": null,
+      "verified_by": null
+    }
+  ],
+  "help": [
+    {
+      "id": "nch",
+      "name": {"en": "National Consumer Helpline", "bn": "জাতীয় ক্রেতা হেল্পলাইন", "hi": "राष्ट्रीय उपभोक्ता हेल्पलाइन"},
+      "contact": "1915 / 1800-11-4000",
+      "source_url": "https://consumerhelpline.gov.in/",
+      "last_verified": null
+    },
+    {
+      "id": "rbi_cms",
+      "name": {"en": "RBI Ombudsman (complaints against banks/NBFCs)", "bn": "RBI ন্যায়পাল (ব্যাংক/NBFC-র বিরুদ্ধে অভিযোগ)", "hi": "RBI लोकपाल (बैंक/NBFC के ख़िलाफ़ शिकायत)"},
+      "contact": "14448 · cms.rbi.org.in",
+      "source_url": "https://cms.rbi.org.in/",
+      "last_verified": null
+    },
+    {
+      "id": "sachet",
+      "name": {"en": "RBI Sachet (report illegal lenders)", "bn": "RBI সচেত (অবৈধ ঋণদাতার খবর দিন)", "hi": "RBI सचेत (अवैध कर्ज़दाता की शिकायत)"},
+      "contact": "sachet.rbi.org.in",
+      "source_url": "https://sachet.rbi.org.in/",
+      "last_verified": null
+    }
+  ]
+}

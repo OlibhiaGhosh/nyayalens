@@ -1,0 +1,28 @@
+.venv/
+__pycache__/
+.pytest_cache/
+node_modules/
+frontend/dist/
+models/
+*.part
+samples/*.small.html
+
+# build caches
+*.tsbuildinfo
+.vite/
+
+# local settings and secrets
+.env
+.env.*
+
+# logs (the eval run log is kept as evidence)
+*.log
+!eval/gemma_run.log
+
+# editors and OS
+.vscode/
+.idea/
+.claude/
+.DS_Store
+Thumbs.db
+desktop.ini

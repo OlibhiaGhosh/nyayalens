@@ -1,0 +1,100 @@
+{
+  "_note": "Fixed translations Gemma must use when localizing, so the same word means the same thing on every card. Needs native-speaker review.",
+  "terms": {
+    "loan": {"bn": "ঋণ", "hi": "कर्ज़"},
+    "lender": {"bn": "ঋণদাতা", "hi": "कर्ज़दाता"},
+    "borrower": {"bn": "ঋণগ্রহীতা", "hi": "कर्ज़दार"},
+    "interest": {"bn": "সুদ", "hi": "ब्याज"},
+    "interest rate": {"bn": "সুদের হার", "hi": "ब्याज दर"},
+    "installment": {"bn": "কিস্তি", "hi": "किस्त"},
+    "EMI": {"bn": "মাসিক কিস্তি (EMI)", "hi": "मासिक किस्त (EMI)"},
+    "principal": {"bn": "মূল টাকা", "hi": "मूल रकम"},
+    "processing fee": {"bn": "প্রসেসিং ফি", "hi": "प्रोसेसिंग फीस"},
+    "late fee": {"bn": "দেরির চার্জ", "hi": "देरी शुल्क"},
+    "penalty": {"bn": "জরিমানা", "hi": "जुर्माना"},
+    "compound interest": {"bn": "সুদের উপর সুদ", "hi": "ब्याज पर ब्याज"},
+    "flat rate": {"bn": "ফ্ল্যাট রেট", "hi": "फ्लैट रेट"},
+    "reducing balance": {"bn": "কমতে থাকা বাকি টাকা", "hi": "घटती बकाया रकम"},
+    "APR": {"bn": "APR (বছরে আসল খরচের হার)", "hi": "APR (साल का असली खर्च)"},
+    "collateral": {"bn": "বন্ধক", "hi": "गिरवी"},
+    "security deposit": {"bn": "জামানত", "hi": "सिक्योरिटी डिपॉज़िट"},
+    "prepayment": {"bn": "আগে শোধ", "hi": "जल्दी चुकाना"},
+    "agreement": {"bn": "চুক্তি", "hi": "समझौता"},
+    "clause": {"bn": "শর্ত", "hi": "शर्त"},
+    "signature": {"bn": "সই", "hi": "दस्तख़त"},
+    "notice": {"bn": "নোটিশ", "hi": "सूचना"},
+    "rent": {"bn": "ভাড়া", "hi": "किराया"},
+    "landlord": {"bn": "বাড়িওয়ালা", "hi": "मकान मालिक"},
+    "tenant": {"bn": "ভাড়াটে", "hi": "किरायेदार"},
+    "court": {"bn": "আদালত", "hi": "अदालत"},
+    "consumer commission": {"bn": "ক্রেতা সুরক্ষা কমিশন", "hi": "उपभोक्ता आयोग"},
+    "blank cheque": {"bn": "ফাঁকা চেক", "hi": "खाली चेक"}
+  },
+  "category_text": {
+    "late_fee": {
+      "en": "This part is about charges if you pay late.",
+      "bn": "এই অংশে দেরিতে টাকা দিলে কী চার্জ লাগবে তা বলা আছে।",
+      "hi": "इस हिस्से में देर से पैसा देने पर लगने वाले शुल्क की बात है।"
+    },
+    "processing_fee": {
+      "en": "This part is about fees taken for the loan.",
+      "bn": "এই অংশে ঋণের জন্য নেওয়া ফি-র কথা বলা আছে।",
+      "hi": "इस हिस्से में कर्ज़ के लिए ली जाने वाली फीस की बात है।"
+    },
+    "interest_rate": {
+      "en": "This part is about the interest and the installments.",
+      "bn": "এই অংশে সুদ আর কিস্তির কথা বলা আছে।",
+      "hi": "इस हिस्से में ब्याज और किस्तों की बात है।"
+    },
+    "unilateral_change": {
+      "en": "This part says the terms can be changed.",
+      "bn": "এই অংশে বলা আছে শর্ত বদলানো যেতে পারে।",
+      "hi": "इस हिस्से में लिखा है कि शर्तें बदली जा सकती हैं।"
+    },
+    "repossession": {
+      "en": "This part is about taking your property if you don't pay.",
+      "bn": "এই অংশে টাকা না দিলে আপনার জিনিস নিয়ে নেওয়ার কথা বলা আছে।",
+      "hi": "इस हिस्से में पैसा न देने पर आपकी चीज़ें ले लेने की बात है।"
+    },
+    "rights_waiver": {
+      "en": "This part may take away some of your rights.",
+      "bn": "এই অংশ আপনার কিছু অধিকার কেড়ে নিতে পারে।",
+      "hi": "यह हिस्सा आपके कुछ अधिकार छीन सकता है।"
+    },
+    "prepayment": {
+      "en": "This part is about paying the loan back early.",
+      "bn": "এই অংশে আগে ঋণ শোধ করার কথা বলা আছে।",
+      "hi": "इस हिस्से में कर्ज़ जल्दी चुकाने की बात है।"
+    },
+    "security_deposit": {
+      "en": "This part is about the security deposit.",
+      "bn": "এই অংশে জামানতের কথা বলা আছে।",
+      "hi": "इस हिस्से में सिक्योरिटी डिपॉज़िट की बात है।"
+    },
+    "eviction": {
+      "en": "This part is about being asked to leave the house.",
+      "bn": "এই অংশে বাড়ি ছেড়ে দিতে বলার কথা বলা আছে।",
+      "hi": "इस हिस्से में घर खाली करने को कहने की बात है।"
+    },
+    "other": {
+      "en": "This part is a general condition of the agreement.",
+      "bn": "এই অংশে চুক্তির একটি সাধারণ শর্ত আছে।",
+      "hi": "इस हिस्से में समझौते की एक सामान्य शर्त है।"
+    }
+  },
+  "generic_questions": {
+    "en": ["Can you explain this part to me in simple words?", "Can you write that promise in this paper?"],
+    "bn": ["এই অংশটা কি সহজ ভাষায় বুঝিয়ে দেবেন?", "এই কথাটা কি কাগজে লিখে দেবেন?"],
+    "hi": ["क्या आप यह हिस्सा आसान भाषा में समझाएंगे?", "क्या आप यह बात कागज़ पर लिख देंगे?"]
+  },
+  "looks_standard": {
+    "en": "This looks like a normal condition. Still read it once before signing.",
+    "bn": "এটা একটা সাধারণ শর্ত বলে মনে হচ্ছে। তবু সই করার আগে একবার পড়ে নিন।",
+    "hi": "यह एक सामान्य शर्त लगती है। फिर भी दस्तख़त से पहले एक बार पढ़ लें।"
+  },
+  "not_in_document": {
+    "en": "This is not in this document.",
+    "bn": "এই কাগজে এ বিষয়ে কিছু লেখা নেই।",
+    "hi": "इस कागज़ में इसके बारे में कुछ नहीं लिखा है।"
+  }
+}

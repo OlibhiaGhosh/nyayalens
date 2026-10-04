@@ -1,0 +1,327 @@
+{
+  "_note": "Hand-curated. Gemma may only output rule IDs from this list (enforced by the JSON schema and again in rules.py). 'model_hint' is what Gemma sees. 'deterministic' rules are also triggered by code in rules.py. Bengali/Hindi text needs native-speaker review. Fill last_verified once the linked statutes are checked.",
+  "rules": [
+    {
+      "id": "effective_cost_mismatch",
+      "categories": ["interest_rate", "processing_fee"],
+      "severity": "NOT_OK",
+      "statute_ids": ["rbi_kfs_2024"],
+      "deterministic": true,
+      "doc_level": true,
+      "model_hint": "Computed by code only; never select.",
+      "name": {"en": "Real cost much higher than the paper says", "bn": "কাগজে লেখা হারের চেয়ে আসল খরচ অনেক বেশি", "hi": "कागज़ पर लिखी दर से असली खर्च बहुत ज़्यादा"},
+      "plain": {
+        "en": "Because fees are cut at the start or interest is charged on the full amount (flat rate), the real yearly cost is much higher than the rate written on the paper.",
+        "bn": "শুরুতেই ফি কেটে নেওয়ায় বা পুরো টাকার উপর সুদ ধরায় (ফ্ল্যাট রেট), বছরে আসল খরচ কাগজে লেখা হারের চেয়ে অনেক বেশি।",
+        "hi": "शुरू में फीस काटने या पूरी रकम पर ब्याज लगाने (फ्लैट रेट) की वजह से, साल का असली खर्च कागज़ पर लिखी दर से बहुत ज़्यादा है।"
+      },
+      "questions": {
+        "en": ["What is the total amount I will pay back, including all fees?", "What is the yearly rate (APR) on the money I actually receive?", "Can you write the total amount and the APR on this paper?"],
+        "bn": ["সব ফি মিলিয়ে মোট কত টাকা ফেরত দিতে হবে?", "আমার হাতে যে টাকা আসবে, তার উপর বছরে আসল সুদের হার (APR) কত?", "মোট টাকা আর APR কি এই কাগজে লিখে দেবেন?"],
+        "hi": ["सब फीस मिलाकर कुल कितना पैसा लौटाना होगा?", "मेरे हाथ में जो पैसा आएगा, उस पर साल का असली ब्याज (APR) कितना है?", "क्या आप कुल रकम और APR इस कागज़ पर लिख देंगे?"]
+      },
+      "ask_to_change": {"en": "Ask them to write the APR and the total repayment amount in the agreement.", "bn": "চুক্তিতে APR আর মোট ফেরতের টাকা লিখে দিতে বলুন।", "hi": "समझौते में APR और कुल वापसी की रकम लिखने को कहें।"},
+      "rider_en": "The Lender confirms that the Annual Percentage Rate (APR), computed on the amount actually disbursed and including all fees and charges, is ___% and that the total amount payable by the Borrower is Rs ___. No other charge shall be payable.",
+      "last_verified": null
+    },
+    {
+      "id": "flat_rate_presented",
+      "categories": ["interest_rate"],
+      "severity": "CAREFUL",
+      "statute_ids": ["rbi_kfs_2024"],
+      "deterministic": true,
+      "doc_level": false,
+      "model_hint": "Interest is 'flat' or charged on the full original amount for the whole term, not on the reducing balance.",
+      "name": {"en": "Flat interest rate", "bn": "ফ্ল্যাট সুদের হার", "hi": "फ्लैट ब्याज दर"},
+      "plain": {
+        "en": "Interest is charged on the full loan for the whole time, even after you have paid part of it back. A 12% flat rate costs about the same as 21-22% on a normal reducing balance.",
+        "bn": "পুরো সময় ধরে পুরো ঋণের উপর সুদ ধরা হয়, কিছু টাকা শোধ করার পরেও। 12% ফ্ল্যাট রেটের খরচ সাধারণ (কমতে থাকা বাকি টাকার) হিসাবে প্রায় 21-22% এর সমান।",
+        "hi": "पूरे समय पूरे कर्ज़ पर ब्याज लगता है, कुछ पैसा चुकाने के बाद भी। 12% फ्लैट दर का खर्च सामान्य (घटती बकाया रकम) हिसाब से लगभग 21-22% के बराबर है।"
+      },
+      "questions": {
+        "en": ["Is the interest flat, or on the amount still owed?", "What would each installment be if interest is only on the amount still owed?"],
+        "bn": ["সুদ কি ফ্ল্যাট, নাকি কমতে থাকা বাকি টাকার উপর?", "শুধু বাকি টাকার উপর সুদ ধরলে প্রতি কিস্তি কত হবে?"],
+        "hi": ["ब्याज फ्लैट है या घटती बकाया रकम पर?", "सिर्फ़ बकाया रकम पर ब्याज लगे तो हर किस्त कितनी होगी?"]
+      },
+      "ask_to_change": {"en": "Ask for interest on the reducing balance, or for the APR to be written down.", "bn": "বাকি টাকার উপর সুদ চান, অথবা APR লিখে দিতে বলুন।", "hi": "घटती बकाया रकम पर ब्याज मांगें, या APR लिखवाएं।"},
+      "rider_en": "Interest shall be calculated only on the outstanding principal (reducing balance) at ___% per annum.",
+      "last_verified": null
+    },
+    {
+      "id": "missing_apr_disclosure",
+      "categories": ["interest_rate"],
+      "severity": "CAREFUL",
+      "statute_ids": ["rbi_kfs_2024"],
+      "deterministic": true,
+      "doc_level": true,
+      "model_hint": "Computed by code only; never select.",
+      "name": {"en": "Yearly cost not written", "bn": "বছরের আসল খরচ লেখা নেই", "hi": "साल का असली खर्च नहीं लिखा"},
+      "plain": {
+        "en": "The paper does not state the yearly cost (APR). Lenders regulated by RBI must give this in a Key Facts Statement.",
+        "bn": "কাগজে বছরের আসল খরচ (APR) লেখা নেই। RBI-নিয়ন্ত্রিত ঋণদাতাদের এটা 'কি ফ্যাক্টস স্টেটমেন্ট'-এ দিতে হয়।",
+        "hi": "कागज़ पर साल का असली खर्च (APR) नहीं लिखा है। RBI-नियंत्रित कर्ज़दाताओं को यह 'की फैक्ट्स स्टेटमेंट' में देना होता है।"
+      },
+      "questions": {
+        "en": ["Can I get a Key Facts Statement for this loan?", "What is the total I will pay back, with all charges?"],
+        "bn": ["এই ঋণের 'কি ফ্যাক্টস স্টেটমেন্ট' কি পাব?", "সব খরচ মিলিয়ে মোট কত ফেরত দিতে হবে?"],
+        "hi": ["क्या इस कर्ज़ का 'की फैक्ट्स स्टेटमेंट' मिलेगा?", "सब खर्च मिलाकर कुल कितना लौटाना होगा?"]
+      },
+      "ask_to_change": {"en": "Ask for the APR, all fees, and the total repayment to be written in the agreement.", "bn": "APR, সব ফি আর মোট ফেরতের টাকা চুক্তিতে লিখতে বলুন।", "hi": "APR, सारी फीस और कुल वापसी की रकम समझौते में लिखवाएं।"},
+      "rider_en": "The Lender shall provide a Key Facts Statement stating the APR, every fee and charge, and the total amount payable, and no charge not listed in it shall be levied.",
+      "last_verified": null
+    },
+    {
+      "id": "penal_compounding",
+      "categories": ["late_fee"],
+      "severity": "NOT_OK",
+      "statute_ids": ["rbi_penal_charges_2023", "ica1872_s74"],
+      "deterministic": true,
+      "doc_level": false,
+      "model_hint": "Late/penal charge is added to the interest rate ('penal interest', 'additional interest'), compounded, or charged as interest on overdue interest.",
+      "name": {"en": "Late charge grows like interest", "bn": "দেরির জরিমানার উপরও সুদ", "hi": "देरी के जुर्माने पर भी ब्याज"},
+      "plain": {
+        "en": "If you are late, the extra charge is added to the interest rate or grows as interest on interest. For RBI-regulated lenders, late charges must be a reasonable fixed charge and must not compound.",
+        "bn": "দেরি হলে বাড়তি টাকা সুদের হারের সঙ্গে যোগ হয়, বা সুদের উপর সুদ হিসেবে বাড়তে থাকে। RBI-নিয়ন্ত্রিত ঋণদাতাদের দেরির চার্জ যুক্তিসঙ্গত ও নির্দিষ্ট হতে হবে, আর তার উপর সুদ ধরা যাবে না।",
+        "hi": "देर होने पर अतिरिक्त रकम ब्याज दर में जुड़ जाती है, या ब्याज पर ब्याज बनकर बढ़ती है। RBI-नियंत्रित कर्ज़दाताओं का देरी शुल्क उचित और तय होना चाहिए, और उस पर ब्याज नहीं लग सकता।"
+      },
+      "questions": {
+        "en": ["If I am one week late, exactly how much extra will I pay?", "Is the late charge a fixed amount, or does it keep growing?", "Will you charge interest on the late charge?"],
+        "bn": ["এক সপ্তাহ দেরি হলে ঠিক কত টাকা বেশি দিতে হবে?", "দেরির চার্জ কি নির্দিষ্ট টাকা, নাকি বাড়তেই থাকবে?", "দেরির চার্জের উপর কি সুদ ধরবেন?"],
+        "hi": ["एक हफ्ता देर होने पर ठीक कितना ज़्यादा देना होगा?", "देरी शुल्क तय रकम है या बढ़ता रहेगा?", "क्या देरी शुल्क पर भी ब्याज लगाएंगे?"]
+      },
+      "ask_to_change": {"en": "Ask for a small fixed late charge, with no interest on it.", "bn": "ছোট, নির্দিষ্ট দেরির চার্জ চান, যার উপর কোনো সুদ ধরা হবে না।", "hi": "छोटा, तय देरी शुल्क मांगें, जिस पर कोई ब्याज न लगे।"},
+      "rider_en": "Any charge for delayed payment shall be a fixed penal charge of Rs ___ per instalment, shall not be added to the rate of interest, and shall not be compounded or capitalised.",
+      "last_verified": null
+    },
+    {
+      "id": "excessive_late_fee",
+      "categories": ["late_fee"],
+      "severity": "CAREFUL",
+      "statute_ids": ["cpa2019_unfair_contract", "ica1872_s74"],
+      "deterministic": false,
+      "doc_level": false,
+      "model_hint": "Late fee or penalty is very large relative to the missed installment (for example a daily percentage, or a fixed amount bigger than a typical installment).",
+      "name": {"en": "Very high late charge", "bn": "খুব বেশি দেরির চার্জ", "hi": "बहुत ज़्यादा देरी शुल्क"},
+      "plain": {
+        "en": "The charge for paying late is very large compared to the payment that was late. A penalty much bigger than the lender's real loss can be challenged as unfair.",
+        "bn": "দেরিতে দেওয়ার চার্জ বকেয়া কিস্তির তুলনায় অনেক বেশি। ঋণদাতার আসল ক্ষতির চেয়ে অনেক বড় জরিমানাকে অন্যায্য বলে চ্যালেঞ্জ করা যায়।",
+        "hi": "देर से भुगतान का शुल्क बकाया किस्त की तुलना में बहुत ज़्यादा है। कर्ज़दाता के असली नुकसान से बहुत बड़े जुर्माने को अनुचित बताकर चुनौती दी जा सकती है।"
+      },
+      "questions": {
+        "en": ["How was this late charge decided?", "Can the late charge be a small fixed amount with a maximum?"],
+        "bn": ["এই দেরির চার্জ কীভাবে ঠিক করা হয়েছে?", "দেরির চার্জ কি ছোট নির্দিষ্ট টাকা, সর্বোচ্চ সীমাসহ, হতে পারে?"],
+        "hi": ["यह देरी शुल्क कैसे तय हुआ?", "क्या देरी शुल्क छोटी तय रकम, अधिकतम सीमा के साथ, हो सकता है?"]
+      },
+      "ask_to_change": {"en": "Ask for a small late charge with a maximum limit.", "bn": "ছোট দেরির চার্জ আর তার একটা সর্বোচ্চ সীমা চান।", "hi": "छोटा देरी शुल्क और उसकी अधिकतम सीमा मांगें।"},
+      "rider_en": "The total penal charge for any one delayed instalment shall not exceed Rs ___.",
+      "last_verified": null
+    },
+    {
+      "id": "unilateral_change",
+      "categories": ["unilateral_change"],
+      "severity": "NOT_OK",
+      "statute_ids": ["rbi_fair_practices_code", "cpa2019_unfair_contract"],
+      "deterministic": false,
+      "doc_level": false,
+      "model_hint": "Lender may change interest rate, fees, installment, or terms at its discretion, at any time, or without the borrower's consent or prior notice.",
+      "name": {"en": "Lender can change terms alone", "bn": "ঋণদাতা একাই শর্ত বদলাতে পারে", "hi": "कर्ज़दाता अकेले शर्तें बदल सकता है"},
+      "plain": {
+        "en": "The lender can change the interest rate, fees, or rules whenever it wants, without asking you or telling you first.",
+        "bn": "ঋণদাতা যখন খুশি সুদের হার, ফি বা নিয়ম বদলাতে পারে, আপনাকে না জিজ্ঞেস করে বা আগে না জানিয়ে।",
+        "hi": "कर्ज़दाता जब चाहे ब्याज दर, फीस या नियम बदल सकता है, आपसे पूछे या पहले बताए बिना।"
+      },
+      "questions": {
+        "en": ["Can you change the rate or fees after I sign?", "How many days' notice will you give before any change?", "If I don't agree to a change, can I repay and leave without a penalty?"],
+        "bn": ["সই করার পর কি আপনি হার বা ফি বদলাতে পারবেন?", "কোনো পরিবর্তনের কত দিন আগে জানাবেন?", "পরিবর্তন না মানলে কি জরিমানা ছাড়া টাকা শোধ করে বেরিয়ে যেতে পারব?"],
+        "hi": ["क्या दस्तख़त के बाद आप दर या फीस बदल सकते हैं?", "किसी बदलाव से कितने दिन पहले बताएंगे?", "अगर बदलाव मंज़ूर न हो तो क्या बिना जुर्माने के पैसा चुकाकर निकल सकता हूँ?"]
+      },
+      "ask_to_change": {"en": "Ask for written notice before any change, and the right to repay without penalty if you disagree.", "bn": "যেকোনো পরিবর্তনের আগে লিখিত নোটিশ, আর রাজি না হলে জরিমানা ছাড়া শোধ করার অধিকার চান।", "hi": "किसी भी बदलाव से पहले लिखित सूचना, और असहमति पर बिना जुर्माने के चुकाने का अधिकार मांगें।"},
+      "rider_en": "No change to the rate of interest, fees, charges or other terms shall take effect unless the Borrower is given at least 30 days' prior written notice; the Borrower may repay the loan in full without any prepayment charge before the change takes effect.",
+      "last_verified": null
+    },
+    {
+      "id": "repossession_without_notice",
+      "categories": ["repossession"],
+      "severity": "NOT_OK",
+      "statute_ids": ["rbi_fair_practices_code"],
+      "deterministic": false,
+      "doc_level": false,
+      "model_hint": "Lender may seize, repossess, sell or auction collateral (goods, gold, vehicle, land) without prior written notice or without giving time to pay, or may enter the borrower's home. Do NOT select if the clause gives a notice period before the sale.",
+      "name": {"en": "Can take your property without notice", "bn": "নোটিশ ছাড়াই জিনিস নিয়ে নিতে পারে", "hi": "बिना सूचना संपत्ति ले सकते हैं"},
+      "plain": {
+        "en": "The lender can take your goods, gold, vehicle or land without first giving you written notice and time to pay.",
+        "bn": "ঋণদাতা আগে লিখিত নোটিশ ও টাকা দেওয়ার সময় না দিয়েই আপনার জিনিস, সোনা, গাড়ি বা জমি নিয়ে নিতে পারে।",
+        "hi": "कर्ज़दाता पहले लिखित सूचना और चुकाने का समय दिए बिना आपका सामान, सोना, गाड़ी या ज़मीन ले सकता है।"
+      },
+      "questions": {
+        "en": ["How many days' written notice will you give before taking anything?", "Will I get a chance to pay the dues first?", "If my item is sold, will you return any money left over?"],
+        "bn": ["কিছু নেওয়ার আগে কত দিনের লিখিত নোটিশ দেবেন?", "আগে বকেয়া শোধ করার সুযোগ পাব কি?", "আমার জিনিস বিক্রি হলে বাড়তি টাকা কি আমাকে ফেরত দেবেন?"],
+        "hi": ["कुछ भी लेने से पहले कितने दिन की लिखित सूचना देंगे?", "क्या पहले बकाया चुकाने का मौका मिलेगा?", "अगर मेरा सामान बिका तो बची हुई रकम मुझे लौटाएंगे?"]
+      },
+      "ask_to_change": {"en": "Ask for written notice, time to pay, and return of any surplus after a sale.", "bn": "লিখিত নোটিশ, টাকা দেওয়ার সময়, আর বিক্রির পর বাড়তি টাকা ফেরত চান।", "hi": "लिखित सूचना, चुकाने का समय, और बिक्री के बाद बची रकम की वापसी मांगें।"},
+      "rider_en": "The Lender shall not take possession of any security without first giving the Borrower at least ___ days' written notice to pay the overdue amount; any amount realised above the dues shall be returned to the Borrower with a statement of account.",
+      "last_verified": null
+    },
+    {
+      "id": "rights_waiver",
+      "categories": ["rights_waiver"],
+      "severity": "NOT_OK",
+      "statute_ids": ["ica1872_s28", "cpa2019_redressal"],
+      "deterministic": false,
+      "doc_level": false,
+      "model_hint": "Borrower/tenant gives up the right to complain, go to any court, consumer forum/commission, ombudsman, or police; or agrees the lender's decision is final and cannot be challenged.",
+      "name": {"en": "Gives up your right to complain", "bn": "অভিযোগ করার অধিকার ছেড়ে দেওয়া", "hi": "शिकायत का अधिकार छोड़ना"},
+      "plain": {
+        "en": "You are asked to give up your right to complain, or to go to a court or consumer commission. Under Indian contract law, a clause that fully blocks legal action is generally void.",
+        "bn": "আপনাকে অভিযোগ করার, বা আদালত বা ক্রেতা সুরক্ষা কমিশনে যাওয়ার অধিকার ছেড়ে দিতে বলা হচ্ছে। ভারতীয় চুক্তি আইনে আইনি পথ পুরোপুরি বন্ধ করার শর্ত সাধারণত অকার্যকর।",
+        "hi": "आपसे शिकायत करने, या अदालत या उपभोक्ता आयोग जाने का अधिकार छोड़ने को कहा जा रहा है। भारतीय अनुबंध कानून में कानूनी रास्ता पूरी तरह बंद करने वाली शर्त आम तौर पर शून्य होती है।"
+      },
+      "questions": {
+        "en": ["Why does this say I cannot complain anywhere?", "Can this line be removed?"],
+        "bn": ["এখানে কেন লেখা আছে আমি কোথাও অভিযোগ করতে পারব না?", "এই লাইনটা কি বাদ দেওয়া যায়?"],
+        "hi": ["यहाँ क्यों लिखा है कि मैं कहीं शिकायत नहीं कर सकता?", "क्या यह लाइन हटाई जा सकती है?"]
+      },
+      "ask_to_change": {"en": "Ask for this clause to be removed.", "bn": "এই শর্তটি বাদ দিতে বলুন।", "hi": "यह शर्त हटाने को कहें।"},
+      "rider_en": "Nothing in this agreement shall restrict the Borrower's right to approach any court, consumer commission, ombudsman or other authority.",
+      "last_verified": null
+    },
+    {
+      "id": "blank_documents",
+      "categories": ["rights_waiver"],
+      "severity": "NOT_OK",
+      "statute_ids": [],
+      "deterministic": true,
+      "doc_level": false,
+      "model_hint": "Borrower must sign or hand over blank cheques, undated cheques, blank stamp paper, or blank/unfilled pages.",
+      "name": {"en": "Signing blank papers or cheques", "bn": "ফাঁকা কাগজ বা চেকে সই", "hi": "खाली कागज़ या चेक पर दस्तख़त"},
+      "plain": {
+        "en": "You are asked to sign blank cheques, blank stamp paper, or empty pages. Anything can be written on them later.",
+        "bn": "আপনাকে ফাঁকা চেক, ফাঁকা স্ট্যাম্প পেপার বা খালি পাতায় সই করতে বলা হচ্ছে। পরে এতে যা খুশি লেখা যায়।",
+        "hi": "आपसे खाली चेक, कोरे स्टांप पेपर या खाली पन्नों पर दस्तख़त करने को कहा जा रहा है। बाद में उन पर कुछ भी लिखा जा सकता है।"
+      },
+      "questions": {
+        "en": ["Why do you need a blank cheque or a blank page?", "Can you fill in the amount and date before I sign?"],
+        "bn": ["ফাঁকা চেক বা খালি পাতা কেন লাগবে?", "সই করার আগে টাকা আর তারিখ লিখে দেবেন?"],
+        "hi": ["खाली चेक या खाली पन्ना क्यों चाहिए?", "क्या दस्तख़त से पहले रकम और तारीख भर देंगे?"]
+      },
+      "ask_to_change": {"en": "Ask that every cheque and page be filled in before you sign, and keep a copy.", "bn": "সই করার আগে প্রতিটি চেক ও পাতা পূরণ করতে বলুন, আর একটা কপি রাখুন।", "hi": "दस्तख़त से पहले हर चेक और पन्ना भरवाएं, और एक कॉपी रखें।"},
+      "rider_en": "The Borrower shall not be required to sign any blank cheque, blank stamp paper or blank document, and shall be given a copy of every document signed.",
+      "last_verified": null
+    },
+    {
+      "id": "heavy_prepayment_charge",
+      "categories": ["prepayment"],
+      "severity": "CAREFUL",
+      "statute_ids": ["rbi_foreclosure", "cpa2019_unfair_contract"],
+      "deterministic": false,
+      "doc_level": false,
+      "model_hint": "Early repayment / foreclosure is not allowed, or carries a large charge, or requires paying all remaining interest anyway.",
+      "name": {"en": "Penalty for paying early", "bn": "আগে শোধ করলে জরিমানা", "hi": "जल्दी चुकाने पर जुर्माना"},
+      "plain": {
+        "en": "You must pay a big charge if you repay early, or you are not allowed to repay early. For many personal floating-rate loans from banks and NBFCs, RBI does not allow such charges.",
+        "bn": "আগে টাকা শোধ করলে বড় চার্জ দিতে হবে, বা আগে শোধ করতেই দেওয়া হবে না। ব্যাংক ও NBFC-র অনেক ব্যক্তিগত ফ্লোটিং-রেট ঋণে RBI এমন চার্জ নিতে দেয় না।",
+        "hi": "जल्दी चुकाने पर बड़ा शुल्क देना होगा, या जल्दी चुकाने ही नहीं दिया जाएगा। बैंक और NBFC के कई व्यक्तिगत फ्लोटिंग-रेट कर्ज़ों पर RBI ऐसा शुल्क लेने नहीं देता।"
+      },
+      "questions": {
+        "en": ["If I have the money early, can I repay the whole loan?", "Exactly how much will it cost to close the loan early?"],
+        "bn": ["টাকা আগে জোগাড় হলে কি পুরো ঋণ শোধ করতে পারব?", "আগে ঋণ বন্ধ করলে ঠিক কত খরচ হবে?"],
+        "hi": ["पैसा पहले आ जाए तो क्या पूरा कर्ज़ चुका सकता हूँ?", "कर्ज़ जल्दी बंद करने में ठीक कितना खर्च होगा?"]
+      },
+      "ask_to_change": {"en": "Ask for the right to repay early with no charge, or only a small fixed charge.", "bn": "বিনা চার্জে বা ছোট নির্দিষ্ট চার্জে আগে শোধ করার অধিকার চান।", "hi": "बिना शुल्क या छोटे तय शुल्क पर जल्दी चुकाने का अधिकार मांगें।"},
+      "rider_en": "The Borrower may prepay the loan in part or in full at any time; interest shall be payable only up to the date of prepayment, and no prepayment or foreclosure charge shall be levied.",
+      "last_verified": null
+    },
+    {
+      "id": "hidden_upfront_fees",
+      "categories": ["processing_fee"],
+      "severity": "CAREFUL",
+      "statute_ids": ["rbi_kfs_2024"],
+      "deterministic": false,
+      "doc_level": false,
+      "model_hint": "Fees, insurance, 'file charges' or 'advance interest' are deducted from the loan at disbursal, so the borrower receives less than the stated loan amount.",
+      "name": {"en": "Money cut at the start", "bn": "শুরুতেই টাকা কেটে নেওয়া", "hi": "शुरू में ही पैसा काटना"},
+      "plain": {
+        "en": "Fees or 'advance interest' are cut from the loan at the start. You get less money in hand but pay back as if you got the full amount.",
+        "bn": "শুরুতেই ঋণ থেকে ফি বা 'আগাম সুদ' কেটে নেওয়া হয়। হাতে কম টাকা পান, কিন্তু ফেরত দিতে হয় পুরো টাকার হিসেবে।",
+        "hi": "शुरू में ही कर्ज़ से फीस या 'अग्रिम ब्याज' काट लिया जाता है। हाथ में कम पैसा मिलता है, पर लौटाना पूरी रकम के हिसाब से होता है।"
+      },
+      "questions": {
+        "en": ["How much money will I actually get in my hand?", "What is each fee for, and is any of it refundable?"],
+        "bn": ["আমার হাতে আসলে কত টাকা আসবে?", "প্রতিটি ফি কীসের জন্য, কোনোটা কি ফেরত পাওয়া যায়?"],
+        "hi": ["मेरे हाथ में असल में कितना पैसा आएगा?", "हर फीस किस लिए है, क्या कोई वापस मिलती है?"]
+      },
+      "ask_to_change": {"en": "Ask for every fee to be listed with its amount, and included in the APR.", "bn": "সব ফি টাকার অঙ্কসহ লিখতে বলুন, আর APR-এ সেগুলো ধরতে বলুন।", "hi": "सारी फीस रकम के साथ लिखवाएं, और APR में उन्हें जोड़ने को कहें।"},
+      "rider_en": "The only fees payable are listed in Schedule A with their amounts; the amount disbursed to the Borrower shall be Rs ___, and interest shall be charged only on the amount actually disbursed.",
+      "last_verified": null
+    },
+    {
+      "id": "excessive_security_deposit",
+      "categories": ["security_deposit"],
+      "severity": "CAREFUL",
+      "statute_ids": ["model_tenancy_act_2021", "cpa2019_unfair_contract"],
+      "deterministic": true,
+      "doc_level": false,
+      "model_hint": "Rental security deposit is more than two months' rent, or is non-refundable, or has no return date.",
+      "name": {"en": "Very high security deposit", "bn": "খুব বেশি জামানত", "hi": "बहुत ज़्यादा सिक्योरिटी डिपॉज़िट"},
+      "plain": {
+        "en": "The deposit is more than two months' rent, or has no clear return. The Model Tenancy Act suggests at most two months for a home, but only in states that have adopted it.",
+        "bn": "জামানত দুই মাসের ভাড়ার চেয়ে বেশি, বা ফেরতের কথা স্পষ্ট নয়। মডেল টেন্যান্সি আইন বাড়ির জন্য সর্বোচ্চ দুই মাসের কথা বলে, তবে কেবল যে রাজ্যগুলো তা গ্রহণ করেছে সেখানে।",
+        "hi": "डिपॉज़िट दो महीने के किराए से ज़्यादा है, या वापसी साफ़ नहीं है। मॉडल टेनेंसी एक्ट घर के लिए अधिकतम दो महीने की बात करता है, पर सिर्फ़ उन राज्यों में जिन्होंने इसे अपनाया है।"
+      },
+      "questions": {
+        "en": ["When and how will the deposit be returned?", "What can be cut from the deposit?"],
+        "bn": ["জামানত কবে আর কীভাবে ফেরত দেবেন?", "জামানত থেকে কী কী কাটা যেতে পারে?"],
+        "hi": ["डिपॉज़िट कब और कैसे लौटाएंगे?", "डिपॉज़िट से क्या-क्या काटा जा सकता है?"]
+      },
+      "ask_to_change": {"en": "Ask for a smaller deposit and a fixed date for its return.", "bn": "কম জামানত আর ফেরতের নির্দিষ্ট তারিখ চান।", "hi": "कम डिपॉज़िट और लौटाने की तय तारीख मांगें।"},
+      "rider_en": "The security deposit shall not exceed two months' rent and shall be refunded within one month of the tenant vacating, after deducting only documented dues.",
+      "last_verified": null
+    },
+    {
+      "id": "eviction_without_notice",
+      "categories": ["eviction"],
+      "severity": "NOT_OK",
+      "statute_ids": ["model_tenancy_act_2021"],
+      "deterministic": false,
+      "doc_level": false,
+      "model_hint": "Landlord may evict, lock the premises, remove belongings, or cut water/electricity without proper written notice or legal process.",
+      "name": {"en": "Can be made to leave without notice", "bn": "নোটিশ ছাড়াই উচ্ছেদ", "hi": "बिना सूचना बेदखली"},
+      "plain": {
+        "en": "The owner can make you leave, lock the house, or cut water or electricity without proper notice.",
+        "bn": "মালিক ঠিকমতো নোটিশ না দিয়েই আপনাকে বের করে দিতে, ঘরে তালা দিতে, বা জল-বিদ্যুৎ বন্ধ করতে পারে।",
+        "hi": "मालिक ठीक सूचना दिए बिना आपको निकाल सकता है, घर पर ताला लगा सकता है, या पानी-बिजली काट सकता है।"
+      },
+      "questions": {
+        "en": ["How many days' notice will you give before asking me to leave?", "Will water or electricity ever be cut off?"],
+        "bn": ["চলে যেতে বলার আগে কত দিনের নোটিশ দেবেন?", "জল বা বিদ্যুৎ কি কখনো বন্ধ করা হবে?"],
+        "hi": ["निकलने को कहने से पहले कितने दिन की सूचना देंगे?", "क्या पानी या बिजली कभी काटी जाएगी?"]
+      },
+      "ask_to_change": {"en": "Ask for a written notice period and a promise not to cut essential supplies.", "bn": "লিখিত নোটিশের সময় আর জল-বিদ্যুৎ বন্ধ না করার প্রতিশ্রুতি চান।", "hi": "लिखित सूचना की अवधि और पानी-बिजली न काटने का वादा मांगें।"},
+      "rider_en": "The Landlord shall give at least ___ months' written notice before seeking possession and shall not withhold or cut off any essential supply to the premises.",
+      "last_verified": null
+    },
+    {
+      "id": "one_sided_termination",
+      "categories": ["other", "repossession"],
+      "severity": "CAREFUL",
+      "statute_ids": ["cpa2019_unfair_contract"],
+      "deterministic": false,
+      "doc_level": false,
+      "model_hint": "Only the lender/landlord can end the agreement or demand the full amount at once, for vague or minor reasons, with no notice or cure period.",
+      "name": {"en": "Only one side can end it", "bn": "কেবল এক পক্ষ চুক্তি শেষ করতে পারে", "hi": "सिर्फ़ एक पक्ष समझौता खत्म कर सकता है"},
+      "plain": {
+        "en": "The other side can end the agreement or demand all the money at once for small reasons, but you have no similar right.",
+        "bn": "অন্য পক্ষ ছোট কারণেও চুক্তি শেষ করতে বা একবারে সব টাকা চাইতে পারে, কিন্তু আপনার তেমন অধিকার নেই।",
+        "hi": "दूसरा पक्ष छोटी वजह से भी समझौता खत्म कर सकता है या एक साथ सारा पैसा मांग सकता है, पर आपको ऐसा अधिकार नहीं है।"
+      },
+      "questions": {
+        "en": ["In exactly what situations can you demand all the money at once?", "Will I get notice and time to fix a problem first?"],
+        "bn": ["ঠিক কোন কোন অবস্থায় একবারে সব টাকা চাইতে পারেন?", "আগে নোটিশ আর সমস্যা মেটানোর সময় পাব কি?"],
+        "hi": ["किन हालात में आप एक साथ सारा पैसा मांग सकते हैं?", "क्या पहले सूचना और गलती सुधारने का समय मिलेगा?"]
+      },
+      "ask_to_change": {"en": "Ask for a clear list of reasons, written notice, and time to fix the problem.", "bn": "কারণের স্পষ্ট তালিকা, লিখিত নোটিশ আর সমস্যা মেটানোর সময় চান।", "hi": "कारणों की साफ़ सूची, लिखित सूचना और सुधार का समय मांगें।"},
+      "rider_en": "The Lender may recall the loan only for the events listed in this clause, and only after giving the Borrower ___ days' written notice to remedy the default.",
+      "last_verified": null
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "08_gold_loan_en",
+  "lang": "en",
+  "doc_type": "loan",
+  "clauses": [
+    {
+      "label": "1",
+      "risky": true,
+      "rules": [
+        "hidden_upfront_fees"
+      ]
+    },
+    {
+      "label": "2",
+      "risky": false,
+      "rules": []
+    },
+    {
+      "label": "3",
+      "risky": true,
+      "rules": [
+        "penal_compounding"
+      ]
+    },
+    {
+      "label": "4",
+      "risky": false,
+      "rules": []
+    },
+    {
+      "label": "5",
+      "risky": false,
+      "rules": []
+    },
+    {
+      "label": "6",
+      "risky": false,
+      "rules": []
+    }
+  ],
+  "money": {
+    "input": {
+      "principal": 40000,
+      "upfront_fees": 600,
+      "installment": 3667,
+      "num_installments": 12,
+      "frequency": "monthly",
+      "stated_rate_pct": 18,
+      "stated_rate_period": "year",
+      "rate_type": "unknown"
+    },
+    "total_repayment": 44004.0,
+    "extra_cost": 4604.0,
+    "apr_pct": 20.91
+  },
+  "rental": null,
+  "pii": [
+    "2154 3039 1173",
+    "6822782489"
+  ]
+}

@@ -1,0 +1,23 @@
+text  01_mfi_weekly_en             caught 4/4  172.5s
+text  02_moneylender_gold_en       caught 5/5  133.1s
+text  03_nbfc_fair_en              caught 0/0  126.3s
+text  04_vehicle_loan_en           caught 5/5  128.5s
+text  05_rental_en                 caught 3/3  113.5s
+text  06_loan_bn                   caught 5/5  136.7s
+text  07_loan_hi                   caught 6/6  148.0s
+text  08_gold_loan_en              caught 2/2  254.7s
+text  09_rental_bn                 caught 3/3  273.5s
+image 01_mfi_weekly_en_angled              caught 4/4  pii 2/2  196.4s
+image 01_mfi_weekly_en_smallfont           caught 4/4  pii 2/2  159.3s
+image 02_moneylender_gold_en_dim           caught 5/5  pii 2/2  142.6s
+image 03_nbfc_fair_en_blurry               caught 0/0  pii 3/3  139.4s
+image 04_vehicle_loan_en_angled            caught 5/5  pii 2/2  137.0s
+image 04_vehicle_loan_en_smallfont         caught 5/5  pii 2/2  132.1s
+image 05_rental_en_dim                     caught 3/3  pii 2/2  126.0s
+image 06_loan_bn_blurry                    caught 4/5  pii 2/2  162.6s
+image 07_loan_hi_angled                    caught 6/6  pii 2/2  145.2s
+image 07_loan_hi_smallfont                 caught 6/6  pii 2/2  124.9s
+image 08_gold_loan_en_dim                  caught 2/2  pii 2/2  127.0s
+image 09_rental_bn_blurry                  caught 2/3  pii 2/2  113.2s
+
+wrote eval/results.md

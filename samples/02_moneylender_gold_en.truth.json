@@ -1,0 +1,68 @@
+{
+  "id": "02_moneylender_gold_en",
+  "lang": "en",
+  "doc_type": "loan",
+  "clauses": [
+    {
+      "label": "1",
+      "risky": false,
+      "rules": []
+    },
+    {
+      "label": "2",
+      "risky": true,
+      "rules": [
+        "missing_apr_disclosure"
+      ]
+    },
+    {
+      "label": "3",
+      "risky": true,
+      "rules": [
+        "blank_documents"
+      ]
+    },
+    {
+      "label": "4",
+      "risky": true,
+      "rules": [
+        "repossession_without_notice"
+      ]
+    },
+    {
+      "label": "5",
+      "risky": true,
+      "rules": [
+        "rights_waiver"
+      ]
+    },
+    {
+      "label": "6",
+      "risky": true,
+      "rules": [
+        "heavy_prepayment_charge"
+      ]
+    }
+  ],
+  "money": {
+    "input": {
+      "principal": 50000,
+      "upfront_fees": 0,
+      "installment": 0,
+      "num_installments": 6,
+      "frequency": "monthly",
+      "balloon": 59000,
+      "stated_rate_pct": 3,
+      "stated_rate_period": "month",
+      "rate_type": "flat"
+    },
+    "total_repayment": 59000,
+    "extra_cost": 9000,
+    "apr_pct": 33.56
+  },
+  "rental": null,
+  "pii": [
+    "8379 4026 5421",
+    "7511615594"
+  ]
+}

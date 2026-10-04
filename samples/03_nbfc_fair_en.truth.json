@@ -1,0 +1,58 @@
+{
+  "id": "03_nbfc_fair_en",
+  "lang": "en",
+  "doc_type": "loan",
+  "clauses": [
+    {
+      "label": "1",
+      "risky": false,
+      "rules": []
+    },
+    {
+      "label": "2",
+      "risky": false,
+      "rules": []
+    },
+    {
+      "label": "3",
+      "risky": false,
+      "rules": []
+    },
+    {
+      "label": "4",
+      "risky": false,
+      "rules": []
+    },
+    {
+      "label": "5",
+      "risky": false,
+      "rules": []
+    },
+    {
+      "label": "6",
+      "risky": false,
+      "rules": []
+    }
+  ],
+  "money": {
+    "input": {
+      "principal": 100000,
+      "upfront_fees": 1180,
+      "installment": 9073,
+      "num_installments": 12,
+      "frequency": "monthly",
+      "stated_rate_pct": 16,
+      "stated_rate_period": "year",
+      "rate_type": "reducing"
+    },
+    "total_repayment": 108876.0,
+    "extra_cost": 10056.0,
+    "apr_pct": 18.28
+  },
+  "rental": null,
+  "pii": [
+    "2781 6184 9592",
+    "7103413164",
+    "OULPF6065L"
+  ]
+}

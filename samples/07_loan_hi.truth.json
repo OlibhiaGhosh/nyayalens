@@ -1,0 +1,70 @@
+{
+  "id": "07_loan_hi",
+  "lang": "hi",
+  "doc_type": "loan",
+  "clauses": [
+    {
+      "label": "1",
+      "risky": true,
+      "rules": [
+        "hidden_upfront_fees"
+      ]
+    },
+    {
+      "label": "2",
+      "risky": true,
+      "rules": [
+        "flat_rate_presented",
+        "effective_cost_mismatch"
+      ]
+    },
+    {
+      "label": "3",
+      "risky": true,
+      "rules": [
+        "blank_documents"
+      ]
+    },
+    {
+      "label": "4",
+      "risky": true,
+      "rules": [
+        "rights_waiver"
+      ]
+    },
+    {
+      "label": "5",
+      "risky": true,
+      "rules": [
+        "unilateral_change"
+      ]
+    },
+    {
+      "label": "6",
+      "risky": true,
+      "rules": [
+        "heavy_prepayment_charge"
+      ]
+    }
+  ],
+  "money": {
+    "input": {
+      "principal": 25000,
+      "upfront_fees": 1250,
+      "installment": 750,
+      "num_installments": 40,
+      "frequency": "weekly",
+      "stated_rate_pct": 20,
+      "stated_rate_period": "year",
+      "rate_type": "flat"
+    },
+    "total_repayment": 30000.0,
+    "extra_cost": 6250.0,
+    "apr_pct": 61.99
+  },
+  "rental": null,
+  "pii": [
+    "6627 0482 8147",
+    "7252880957"
+  ]
+}

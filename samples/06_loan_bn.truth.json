@@ -1,0 +1,68 @@
+{
+  "id": "06_loan_bn",
+  "lang": "bn",
+  "doc_type": "loan",
+  "clauses": [
+    {
+      "label": "1",
+      "risky": true,
+      "rules": [
+        "hidden_upfront_fees"
+      ]
+    },
+    {
+      "label": "2",
+      "risky": true,
+      "rules": [
+        "flat_rate_presented",
+        "effective_cost_mismatch"
+      ]
+    },
+    {
+      "label": "3",
+      "risky": true,
+      "rules": [
+        "penal_compounding"
+      ]
+    },
+    {
+      "label": "4",
+      "risky": true,
+      "rules": [
+        "unilateral_change"
+      ]
+    },
+    {
+      "label": "5",
+      "risky": true,
+      "rules": [
+        "blank_documents"
+      ]
+    },
+    {
+      "label": "6",
+      "risky": false,
+      "rules": []
+    }
+  ],
+  "money": {
+    "input": {
+      "principal": 15000,
+      "upfront_fees": 750,
+      "installment": 1550,
+      "num_installments": 12,
+      "frequency": "monthly",
+      "stated_rate_pct": 2,
+      "stated_rate_period": "month",
+      "rate_type": "flat"
+    },
+    "total_repayment": 18600.0,
+    "extra_cost": 4350.0,
+    "apr_pct": 52.29
+  },
+  "rental": null,
+  "pii": [
+    "৩০১২ ২৬৯১ ৬৬৯৮",
+    "৯৮৪৮০১৮৪৫১"
+  ]
+}

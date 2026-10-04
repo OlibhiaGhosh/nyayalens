@@ -1,0 +1,47 @@
+{
+  "id": "09_rental_bn",
+  "lang": "bn",
+  "doc_type": "rental",
+  "clauses": [
+    {
+      "label": "1",
+      "risky": false,
+      "rules": []
+    },
+    {
+      "label": "2",
+      "risky": true,
+      "rules": [
+        "excessive_security_deposit"
+      ]
+    },
+    {
+      "label": "3",
+      "risky": true,
+      "rules": [
+        "eviction_without_notice"
+      ]
+    },
+    {
+      "label": "4",
+      "risky": true,
+      "rules": [
+        "unilateral_change"
+      ]
+    },
+    {
+      "label": "5",
+      "risky": false,
+      "rules": []
+    }
+  ],
+  "money": null,
+  "rental": {
+    "monthly_rent": 5000,
+    "security_deposit": 50000
+  },
+  "pii": [
+    "৮৩৮৩ ৪৬৫৭ ৮৭১৩",
+    "৭৩১৫০৯৮৩৯৩"
+  ]
+}

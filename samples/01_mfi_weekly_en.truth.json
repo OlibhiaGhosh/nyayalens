@@ -1,0 +1,71 @@
+{
+  "id": "01_mfi_weekly_en",
+  "lang": "en",
+  "doc_type": "loan",
+  "clauses": [
+    {
+      "label": "1",
+      "risky": true,
+      "rules": [
+        "hidden_upfront_fees"
+      ]
+    },
+    {
+      "label": "2",
+      "risky": true,
+      "rules": [
+        "flat_rate_presented",
+        "effective_cost_mismatch"
+      ]
+    },
+    {
+      "label": "3",
+      "risky": true,
+      "rules": [
+        "penal_compounding"
+      ]
+    },
+    {
+      "label": "4",
+      "risky": true,
+      "rules": [
+        "unilateral_change"
+      ]
+    },
+    {
+      "label": "5",
+      "risky": false,
+      "rules": []
+    },
+    {
+      "label": "6",
+      "risky": false,
+      "rules": []
+    },
+    {
+      "label": "7",
+      "risky": false,
+      "rules": []
+    }
+  ],
+  "money": {
+    "input": {
+      "principal": 20000,
+      "upfront_fees": 1400,
+      "installment": 496,
+      "num_installments": 50,
+      "frequency": "weekly",
+      "stated_rate_pct": 24,
+      "stated_rate_period": "year",
+      "rate_type": "flat"
+    },
+    "total_repayment": 24800.0,
+    "extra_cost": 6200.0,
+    "apr_pct": 62.01
+  },
+  "rental": null,
+  "pii": [
+    "3043 3218 1964",
+    "6013389083"
+  ]
+}
