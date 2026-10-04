@@ -1,4 +1,4 @@
-# NyayaLens evaluation results
+# NyayLens evaluation results
 
 - Date: 2026-10-04 03:40
 - Engine: **gemma** (`gemma4:e4b`, num_ctx 8192, temperature 0.1)
@@ -8,13 +8,13 @@
 
 ## Summary
 
-| Input | Docs | Risky clauses caught | ...as NOT OK | False alarms (clean marked NOT OK) | Expected rules found | Money exact (±₹1, ±0.5pp) | Median APR error (pp) | PII hidden | Extra redactions | Sec/doc |
-|---|---|---|---|---|---|---|---|---|---|---|
-| text | 9 | 33/33 (100%) | 26/33 | 1/21 | 37/37 (100%) | 6/7 | 0.0 | 19/19 (100%) | 0 | 165.2 |
-| photo: angled | 3 | 15/15 (100%) | 10/15 | 0/4 | 18/18 (100%) | 3/3 | 0.0 | 6/6 (100%) | 0 | 159.5 |
-| photo: smallfont | 3 | 15/15 (100%) | 10/15 | 0/4 | 18/18 (100%) | 3/3 | 0.0 | 6/6 (100%) | 0 | 138.8 |
-| photo: dim | 3 | 10/10 (100%) | 8/10 | 1/8 | 10/10 (100%) | 1/2 | 182.44 | 6/6 (100%) | 0 | 131.9 |
-| photo: blurry | 3 | 6/8 (75%) | 4/8 | 0/9 | 8/9 (89%) | 2/2 | 0.0 | 7/7 (100%) | 0 | 138.4 |
+| Input            | Docs | Risky clauses caught | ...as NOT OK | False alarms (clean marked NOT OK) | Expected rules found | Money exact (±₹1, ±0.5pp) | Median APR error (pp) | PII hidden   | Extra redactions | Sec/doc |
+| ---------------- | ---- | -------------------- | ------------ | ---------------------------------- | -------------------- | ------------------------- | --------------------- | ------------ | ---------------- | ------- |
+| text             | 9    | 33/33 (100%)         | 26/33        | 1/21                               | 37/37 (100%)         | 6/7                       | 0.0                   | 19/19 (100%) | 0                | 165.2   |
+| photo: angled    | 3    | 15/15 (100%)         | 10/15        | 0/4                                | 18/18 (100%)         | 3/3                       | 0.0                   | 6/6 (100%)   | 0                | 159.5   |
+| photo: smallfont | 3    | 15/15 (100%)         | 10/15        | 0/4                                | 18/18 (100%)         | 3/3                       | 0.0                   | 6/6 (100%)   | 0                | 138.8   |
+| photo: dim       | 3    | 10/10 (100%)         | 8/10         | 1/8                                | 10/10 (100%)         | 1/2                       | 182.44                | 6/6 (100%)   | 0                | 131.9   |
+| photo: blurry    | 3    | 6/8 (75%)            | 4/8          | 0/9                                | 8/9 (89%)            | 2/2                       | 0.0                   | 7/7 (100%)   | 0                | 138.4   |
 
 ## Known failures (every miss, listed)
 

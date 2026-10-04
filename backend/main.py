@@ -1,5 +1,5 @@
 """
-NyayaLens backend. Binds to 127.0.0.1 only, no CORS (the built frontend is served
+NyayLens backend. Binds to 127.0.0.1 only, no CORS (the built frontend is served
 from the same origin; in dev, Vite proxies /api), and a Host-header allowlist
 against DNS rebinding.
 
@@ -29,7 +29,7 @@ from clauses import lines_from_text, split_clauses
 from gemma import Gemma, GemmaError
 from redact import black_out, redact_lines
 
-app = FastAPI(title="NyayaLens", docs_url="/api/docs", openapi_url="/api/openapi.json")
+app = FastAPI(title="NyayLens", docs_url="/api/docs", openapi_url="/api/openapi.json")
 app.add_middleware(TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost"])
 
 gemma = Gemma()

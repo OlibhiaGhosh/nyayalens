@@ -17,10 +17,25 @@ const S = {
   uploadPhoto: { en: "Choose a photo", bn: "ছবি বেছে নিন", hi: "फ़ोटो चुनें" },
   pasteText: { en: "Type or paste the text", bn: "লেখা টাইপ বা পেস্ট করুন", hi: "लिखा हुआ टाइप या पेस्ट करें" },
   capture: { en: "Capture", bn: "তুলুন", hi: "खींचें" },
-  trySample: {
-    en: "Or try a sample contract (made-up data):",
-    bn: "অথবা একটি নমুনা চুক্তি দেখুন (কাল্পনিক তথ্য):",
-    hi: "या एक नमूना समझौता आज़माएं (काल्पनिक जानकारी):",
+  takePhotoHint: {
+    en: "Use this computer's camera. Keep the whole page flat and well lit.",
+    bn: "এই কম্পিউটারের ক্যামেরা দিয়ে। পুরো পাতা সমান রেখে আলোতে তুলুন।",
+    hi: "इस कंप्यूटर के कैमरे से। पूरा पन्ना सीधा रखें और रोशनी में खींचें।",
+  },
+  uploadPhotoHint: {
+    en: "Pick a photo of the paper you already took on your phone.",
+    bn: "ফোনে আগে তোলা কাগজের ছবি বেছে নিন।",
+    hi: "फ़ोन पर पहले से खींची कागज़ की फ़ोटो चुनें।",
+  },
+  pasteTextHint: {
+    en: "Have the words already? Type or paste them in.",
+    bn: "লেখাটা আগে থেকেই আছে? টাইপ বা পেস্ট করুন।",
+    hi: "शब्द पहले से हैं? टाइप या पेस्ट करें।",
+  },
+  samplesTitle: {
+    en: "Try a sample contract (made-up data)",
+    bn: "একটি নমুনা চুক্তি দেখুন (কাল্পনিক তথ্য)",
+    hi: "एक नमूना अनुबंध देखें (काल्पनिक जानकारी)",
   },
   cancel: { en: "Cancel", bn: "বাতিল", hi: "रद्द करें" },
   reading: { en: "Reading your paper…", bn: "আপনার কাগজ পড়া হচ্ছে…", hi: "आपका कागज़ पढ़ा जा रहा है…" },

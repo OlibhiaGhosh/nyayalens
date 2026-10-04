@@ -1,4 +1,4 @@
-# NyayaLens one-command demo (Windows). Everything runs on 127.0.0.1; no internet needed.
+# NyayLens one-command demo (Windows). Everything runs on 127.0.0.1; no internet needed.
 #   powershell -ExecutionPolicy Bypass -File run_demo.ps1            # production build on :8000
 #   powershell -ExecutionPolicy Bypass -File run_demo.ps1 -Model gemma4:e2b   # slower laptops
 param([string]$Model = "gemma4:e4b")
@@ -45,5 +45,5 @@ Write-Host "Warming up $Model and caching prompts (1-2 min on CPU)..."
 try { Invoke-RestMethod -Method Post http://127.0.0.1:8000/api/warmup -TimeoutSec 600 | Format-List } catch { Write-Warning "Warm-up failed: $_" }
 
 Start-Process "http://127.0.0.1:8000"
-Write-Host "NyayaLens running at http://127.0.0.1:8000  (Ctrl+C to stop)"
+Write-Host "NyayLens running at http://127.0.0.1:8000  (Ctrl+C to stop)"
 Wait-Process -Id $backend.Id

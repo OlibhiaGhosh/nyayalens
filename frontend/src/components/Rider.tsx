@@ -57,7 +57,7 @@ export function Rider({ lang, result, onBack }: { lang: Lang; result: Result; on
   };
 
   return (
-    <div className="space-y-4">
+    <div className="print-page mx-auto max-w-3xl space-y-4">
       <div className="no-print flex flex-wrap gap-3">
         <BigButton variant="secondary" onClick={onBack}>
           <ArrowLeft className="size-5" /> {t(lang, "back")}
@@ -70,7 +70,7 @@ export function Rider({ lang, result, onBack }: { lang: Lang; result: Result; on
         </BigButton>
       </div>
 
-      <article className="print-page mx-auto max-w-3xl space-y-4 rounded-2xl border border-ink/10 bg-white p-10 font-serif shadow-sm">
+      <article className="print-page space-y-4 rounded-2xl border border-ink/10 bg-white p-10 font-serif shadow-sm">
         <h1 className="text-center text-2xl font-bold tracking-wide">RIDER TO THE AGREEMENT</h1>
         <p>Date: {today}</p>
         <p>Between: ______________________ (Lender / Landlord)</p>

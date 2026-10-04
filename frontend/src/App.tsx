@@ -1,9 +1,10 @@
-import { Activity, FileSignature, Info, LifeBuoy, RotateCcw, Trash2, Type } from "lucide-react";
+import { FileSignature, Info, LifeBuoy, RotateCcw, Trash2, Type, WifiOff } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { api } from "./api";
-import { Capture } from "./components/Capture";
+import { Capture, type CaptureMode } from "./components/Capture";
 import { ClauseCard } from "./components/ClauseCard";
 import { Heatmap } from "./components/Heatmap";
+import { Logo } from "./components/Logo";
 import { MoneyView } from "./components/MoneyView";
 import { QAPanel } from "./components/QA";
 import { Review } from "./components/Review";
@@ -22,6 +23,7 @@ export default function App() {
   const [big, setBig] = useState(false);
   const [stage, setStage] = useState<Stage>("capture");
   const [prev, setPrev] = useState<Stage>("capture");
+  const [captureMode, setCaptureMode] = useState<CaptureMode>("choose");
   const [session, setSession] = useState<SessionView | null>(null);
   const [result, setResult] = useState<Result | null>(null);
   const [progress, setProgress] = useState<string>("");
@@ -155,6 +157,8 @@ export default function App() {
     await run(async () => setResult(await api.money(session.session_id, lang, terms)));
   };
 
+  // Landing = the capture screen's three choices (not the camera or text editor inside it).
+  const landing = stage === "capture" && captureMode === "choose";
   const card = result?.cards.find((c) => c.clause_id === selected) ?? null;
   const jump = (id: number) => {
     setSelected(id);
@@ -162,57 +166,85 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen">
-      <header className="no-print sticky top-0 z-10 border-b border-ink/10 bg-paper/95 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 px-4 py-3">
-          <div className="mr-auto">
-            <h1 className="text-2xl font-black tracking-tight">
-              NyayaLens <span className="font-normal text-ink/60">ন্যায়লেন্স</span>
-            </h1>
-            <p className="text-sm text-ink/70">{t(lang, "appTagline")}</p>
-          </div>
-          <span className="rounded-full bg-good-soft px-3 py-1 text-sm font-bold text-good">{t(lang, "offlineBadge")}</span>
-          <div className="flex overflow-hidden rounded-full border-2 border-ink/20" role="group" aria-label="Language">
+    <div className="flex min-h-screen flex-col">
+      <header
+        className={`no-print sticky top-0 z-10 bg-paper/95 backdrop-blur ${landing ? "" : "border-b border-ink/10"}`}
+      >
+        {/* Strict left / centre / right: equal outer columns keep the languages at the exact page centre.
+            Below xl (or with big text) it becomes two rows (logo + tools, then languages), the same on every page. */}
+        <nav
+          className={`mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-4 gap-y-3 px-4 py-3 ${
+            big ? "" : "xl:grid xl:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]"
+          }`}
+        >
+          <button
+            onClick={() => setStage("capture")}
+            className="flex min-w-0 items-center gap-2.5 justify-self-start rounded-xl text-left"
+            aria-label={t(lang, "startOver")}
+          >
+            <Logo className="size-10 shrink-0" />
+            {!landing && <span className="truncate font-display text-2xl font-semibold tracking-tight">NyayLens</span>}
+          </button>
+
+          <div
+            className={`order-last flex w-full justify-center gap-2 ${big ? "" : "xl:order-none xl:w-auto"}`}
+            role="group"
+            aria-label="Language"
+          >
             {(Object.keys(LANG_NAMES) as Lang[]).map((l) => (
               <button
                 key={l}
                 onClick={() => switchLang(l)}
-                className={`px-3 py-1 font-bold ${l === lang ? "bg-ink text-white" : "bg-white"}`}
                 aria-pressed={l === lang}
+                className={`min-w-20 whitespace-nowrap rounded-full border-2 px-3 py-1 font-bold transition ${
+                  l === lang ? "border-ink bg-ink text-white" : "border-ink/20 bg-white hover:border-ink"
+                }`}
               >
                 {LANG_NAMES[l]}
               </button>
             ))}
           </div>
-          <button
-            onClick={() => setBig((v) => !v)}
-            aria-pressed={big}
-            className={`inline-flex items-center gap-1 rounded-full border-2 px-3 py-1 font-bold ${big ? "border-ink bg-ink text-white" : "border-ink/20 bg-white"}`}
-          >
-            <Type className="size-4" /> {t(lang, "bigText")}
-          </button>
-          <button
-            onClick={() => {
-              setPrev(stage);
-              setStage("selfcheck");
-            }}
-            className="inline-flex items-center gap-1 rounded-full border-2 border-ink/20 bg-white px-3 py-1 font-bold"
-          >
-            <Activity className="size-4" /> {t(lang, "selfcheck")}
-          </button>
-          <button
-            onClick={wipe}
-            className="inline-flex items-center gap-1 rounded-full border-2 border-bad bg-white px-3 py-1 font-bold text-bad"
-          >
-            <Trash2 className="size-4" /> {t(lang, "wipe")}
-          </button>
-        </div>
+
+          <div className="flex items-center justify-end gap-2 justify-self-end">
+            <button
+              onClick={() => setBig((v) => !v)}
+              aria-pressed={big}
+              title={t(lang, "bigText")}
+              className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border-2 px-2.5 py-1.5 text-sm font-bold transition sm:px-3 sm:py-1 ${big ? "border-ink bg-ink text-white" : "border-ink/20 bg-white hover:border-ink"}`}
+            >
+              <Type className="size-4" aria-hidden />
+              <span className="sr-only sm:not-sr-only">{t(lang, "bigText")}</span>
+            </button>
+            <button
+              onClick={() => {
+                setPrev(stage);
+                setStage("selfcheck");
+              }}
+              title={t(lang, "selfcheck")}
+              className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border-2 px-2.5 py-1.5 text-sm font-bold transition sm:px-3 sm:py-1 border-good-soft bg-good-soft text-good hover:border-good"
+            >
+              <WifiOff className="size-4" aria-hidden />
+              <span className="sr-only sm:not-sr-only">{t(lang, "offlineBadge")}</span>
+            </button>
+            {/* Wiping only makes sense once a paper has been opened. */}
+            {!landing && (
+              <>
+                <span className="mx-1 hidden h-6 w-px bg-ink/15 sm:block" aria-hidden />
+                <button
+                  onClick={wipe}
+                  title={t(lang, "wipe")}
+                  className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border-2 px-2.5 py-1.5 text-sm font-bold transition sm:px-3 sm:py-1 border-bad bg-white text-bad hover:bg-bad-soft"
+                >
+                  <Trash2 className="size-4" aria-hidden />
+                  <span className="sr-only sm:not-sr-only">{t(lang, "wipe")}</span>
+                </button>
+              </>
+            )}
+          </div>
+        </nav>
       </header>
 
-      <main className="mx-auto max-w-7xl space-y-5 px-4 py-6">
-        <p className="no-print flex items-start gap-2 rounded-xl bg-white p-3 text-ink/80 shadow-sm">
-          <Info className="mt-0.5 size-5 shrink-0" /> {t(lang, "notAdvice")}
-        </p>
+      <main className="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-5 px-4 py-6">
 
         {error && (
           <p className="no-print rounded-xl bg-bad-soft p-3 font-bold text-bad">
@@ -220,9 +252,9 @@ export default function App() {
           </p>
         )}
 
-        {stage === "capture" && <Capture lang={lang} onImage={onImage} onText={onText} onSample={onSample} />}
+        {stage === "capture" && <Capture lang={lang} onImage={onImage} onText={onText} onSample={onSample} onModeChange={setCaptureMode} />}
         {stage === "wiped" && (
-          <Panel className="mx-auto max-w-xl space-y-4 text-center">
+          <Panel className="space-y-4 py-12 text-center">
             <Trash2 className="mx-auto size-12 text-good" />
             <p className="text-xl font-bold">{t(lang, "wiped")}</p>
             <BigButton onClick={() => setStage("capture")}>{t(lang, "startOver")}</BigButton>
@@ -335,6 +367,12 @@ export default function App() {
           </>
         )}
       </main>
+
+      <footer className="no-print mx-auto w-full max-w-7xl px-4 pb-6">
+        <p className="mx-auto flex max-w-4xl items-start justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm text-ink/70 shadow-sm">
+          <Info className="mt-0.5 size-4 shrink-0" aria-hidden /> {t(lang, "notAdvice")}
+        </p>
+      </footer>
     </div>
   );
 }

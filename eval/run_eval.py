@@ -1,5 +1,5 @@
 """
-Evaluate NyayaLens on the synthetic contracts in samples/.
+Evaluate NyayLens on the synthetic contracts in samples/.
 
 Modes:
   text   ground-truth text -> redaction -> clauses -> analysis   (tests the reasoning)
@@ -192,7 +192,7 @@ def _agg(rows: list[dict]) -> dict:
 
 
 def write_markdown(runs: list[dict], engine: str, model: str) -> None:
-    out = ["# NyayaLens evaluation results", "",
+    out = ["# NyayLens evaluation results", "",
            f"- Date: {time.strftime('%Y-%m-%d %H:%M')}",
            f"- Engine: **{engine}**" + (f" (`{model}`, num_ctx {config.NUM_CTX}, temperature {config.TEMPERATURE})"
                                          if engine == "gemma" else " (Ollama not running: keyword fallback, not Gemma)"),

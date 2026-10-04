@@ -1,5 +1,5 @@
 """
-Deterministic loan-cost math for NyayaLens.
+Deterministic loan-cost math for NyayLens.
 
 The language model never does arithmetic. Every rupee figure and rate the
 borrower sees comes from this file.
