@@ -37,12 +37,12 @@ export function SelfCheck({ onBack }: { lang: Lang; onBack: () => void }) {
     : [];
 
   return (
-    <Panel className="mx-auto max-w-3xl space-y-4">
+    <Panel className="space-y-4">
       <h2 className="text-2xl font-bold">Offline self-check</h2>
       {err && <p className="text-bad">{err}</p>}
-      <ul className="divide-y divide-ink/10">
+      <ul className="grid gap-x-10 lg:grid-cols-2">
         {rows.map(([name, ok, detail]) => (
-          <li key={name} className="flex items-start gap-3 py-2">
+          <li key={name} className="flex items-start gap-3 border-b border-ink/10 py-2">
             {ok ? <CheckCircle2 className="size-6 shrink-0 text-good" /> : <CircleX className="size-6 shrink-0 text-bad" />}
             <div>
               <div className="font-bold">{name}</div>

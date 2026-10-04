@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# NyayaLens one-command demo (macOS/Linux). Everything runs on 127.0.0.1; no internet needed.
+# NyayLens one-command demo (macOS/Linux). Everything runs on 127.0.0.1; no internet needed.
 #   ./run_demo.sh                 # gemma4:e4b
 #   NYAYA_MODEL=gemma4:e2b ./run_demo.sh
 set -euo pipefail
@@ -28,5 +28,5 @@ echo "Warming up $NYAYA_MODEL ..."
 curl -sf -X POST http://127.0.0.1:8000/api/warmup --max-time 600 || echo "warm-up failed"
 echo
 (command -v xdg-open >/dev/null && xdg-open http://127.0.0.1:8000) || (command -v open >/dev/null && open http://127.0.0.1:8000) || true
-echo "NyayaLens running at http://127.0.0.1:8000  (Ctrl+C to stop)"
+echo "NyayLens running at http://127.0.0.1:8000  (Ctrl+C to stop)"
 wait $BACKEND

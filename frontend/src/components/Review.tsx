@@ -38,7 +38,7 @@ export function Review({
 
   if (q?.retake && !ignoreQuality) {
     return (
-      <Panel className="mx-auto max-w-2xl space-y-4">
+      <Panel className="space-y-4">
         <h2 className="flex items-center gap-2 text-2xl font-bold text-warn">
           <AlertTriangle className="size-7" /> {t(lang, "retakeTitle")}
         </h2>

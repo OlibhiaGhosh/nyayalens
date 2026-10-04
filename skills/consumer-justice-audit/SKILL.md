@@ -4,7 +4,7 @@ description: Audit an Indian loan or rental agreement for borrower/tenant risks.
 license: Apache-2.0
 compatibility: Requires Python 3.9+ (standard library only). No network access needed.
 metadata:
-  project: NyayaLens
+  project: NyayLens
   version: "0.1.0"
 ---
 
@@ -38,7 +38,7 @@ You help a borrower or tenant, who may have little formal education, understand 
    - If `apr_pct - stated_annual_pct >= max(3, 0.2 * stated_annual_pct)`: add `effective_cost_mismatch`.
    - If a loan document never mentions APR / Key Facts Statement: add `missing_apr_disclosure`.
    - Rental with deposit > 2 × monthly rent: add `excessive_security_deposit`.
-   Do **not** call a rate "illegal" just because it is high: RBI sets no single universal cap. Flag the gap between the stated and real cost, and missing disclosure.
+     Do **not** call a rate "illegal" just because it is high: RBI sets no single universal cap. Flag the gap between the stated and real cost, and missing disclosure.
 5. **Explain** each flagged clause in the user's language (Bengali, Hindi, or English) using the rule's `plain`, `questions`, and `ask_to_change` text, adapted to the clause. Short sentences, digits for numbers.
 6. **Summarise** the "3 things to ask before signing", worst clauses first.
 7. **Counter-rider** (if asked): one numbered item per flagged clause using the rule's `rider_en` text, under "Notwithstanding anything to the contrary in the Agreement, the parties agree as follows:".

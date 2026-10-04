@@ -1,5 +1,5 @@
 """
-Download every offline asset NyayaLens needs, ONCE, while you still have internet:
+Download every offline asset NyayLens needs, ONCE, while you still have internet:
   - Tesseract language packs (ben, hin, eng, osd) -> models/tessdata/
   - Piper voices (Bengali, Hindi, English)        -> models/piper/
   - Gemma 4 via `ollama pull` (if Ollama is installed)
